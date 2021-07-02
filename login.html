@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popup Menu - Vanilla JS - Bootstrap</title>
+
+  <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-light bg-navbar-custom py-3">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white">LOGO</a>
+      <div class="d-flex">
+        // DISINI
+        <button class="btn btn-light login-modal-trigger-open mx-5">LOGIN</button>
+      </form>
+    </div>
+  </nav>
+
+  <!-- Modal -->
+  <div class="modal-custom-hide-it" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login To System</h5>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="email-input" class="form-label">Email address</label>
+            <input required class="email-val form-control" type="email" class="form-control" id="email-input" placeholder="nEmail">
+          </div>
+          <div class="mb-3">
+            <label for="password-input" class="form-label">Password address</label>
+            <input required class="password-val form-control" type="password" class="form-control" id="password-input" placeholder="Password">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark login-modal-trigger-close">Cancel</button>
+          <button type="button" class="btn btn-primary submit-login-data">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-5">
+    <h1>Selamat Datang!</h1>
+    <h3>Login Untuk Memulai</h3>
+  </div>
+
+  <script>
+
+    dataUser = [
+      {email: "derissatrio@gmail.com", password: "deris123"},
+
+    ];
+
+    var loginModal = document.querySelector("#loginModal");
+    var openModal = document.querySelector(".login-modal-trigger-open");
+    var closeModal = document.querySelector(".login-modal-trigger-close");
+    var loginSubmit = document.querySelector(".submit-login-data");
+
+    openModal.addEventListener("click", function (e) {
+      loginModal.classList.add("modal-custom-overlay");
+      loginModal.classList.remove("modal-custom-hide-it");
+    });
+
+    closeModal.addEventListener("click", function (e) {
+      loginModal.classList.remove("modal-custom-overlay");
+      loginModal.classList.add("modal-custom-hide-it");
+    });
+
+    loginSubmit.addEventListener("click", function (e) {
+      var email = document.querySelector(".email-val").value;
+      var password = document.querySelector(".password-val").value;
+      console.log("Email:" + email);
+      console.log("Password:" + password);
+
+      if(dataUser.some(user => user.email == email && user.password == password)) {
+        console.log('true')
+        window.location.replace("hackaton.html");
+      } else {
+        console.log('false');
+        alert("email & password salah");
+      }
+        
+
+    });
+    // document.getElementById("myText").value
+  </script>
+</body>
+</html>
