@@ -1,19 +1,17 @@
 function panggil(data) {
     console.log('masuk');
   for (let i = 0; i < data.length; i++) {
-    // create div
-    console.log('masuk for');
+    // create div;
     const tagA = document.createElement('a')
     const tagLi = document.createElement('li')
     const tagImg = document.createElement('img')
-    const tagSpan = document.createElement('p')
+    const tagP = document.createElement('p')
     tagA.setAttribute("id", data[i].namaBarang);
     tagImg.setAttribute('src', data[i].namaBarang + '.jpg')
     tagImg.setAttribute('width', '120px')
-    tagSpan.innerHTML = 'Rp.' + String(data[i].harga)
-    console.log(tagSpan);
+    tagP.innerHTML = 'Rp.' + String(data[i].harga)
     tagA.appendChild(tagImg)
-    tagA.appendChild(tagSpan)
+    tagA.appendChild(tagP)
     tagLi.appendChild(tagA)
     const tagUl = document.getElementById('steam')
     tagUl.appendChild(tagLi)

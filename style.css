@@ -4,7 +4,30 @@ body{
   line-height: 1.6; */
   margin:0;
   padding:0;
-  background: #e84118 
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-position: center;
+  background-image: url(joystick3.jpg);
+}
+
+
+.steamWallet {
+  width: 200px;
+  height: 1220px;
+  background-color: #444444;
+  margin: auto;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 10px);
+  border-radius: 10px;
+}
+
+.gallery li {
+  overflow: hidden;
+  float:center;
+  width: 120px;
+  /* height: 200px; */
+  margin-bottom: 20px;
+
 }
 .search-box{
   position:absolute;
