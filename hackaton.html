@@ -14,6 +14,15 @@
     
     <button id="modalBtn" class="button"> <i class="fas fa-shopping-basket"></i> </button>
 
+    <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content">
+          <div class="close-btn" onclick="togglePopup()">×</div>
+          <h1>Thanks!</h1>
+          <p>Terimakasih sudah belanja. untuk kodenya silahkan check ke bagian kode saya.</p>
+        </div>
+    </div>
+
     <div id="simpleModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -62,7 +71,7 @@
                         <tr>
                             <td colspan="4"></td>
                             <td align="right">
-                                <strong>TOTAL = $ <span id="total" class="total">0</span></strong>
+                                <strong>TOTAL = $ <span id="totalSemua" class="total">0</span></strong>
                             </td>
                         </tr>
                     </tfoot>

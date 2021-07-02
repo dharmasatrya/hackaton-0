@@ -36,6 +36,7 @@ function closeModal(){
 function clickOutside(e){
     if(e.target == modal){
         modal.style.display = 'none';
+        popup1.style.display = "none";
     }
 }
 
@@ -58,6 +59,7 @@ function tampilkan() {
 
         // create table row
         const tr = document.createElement('tr');
+        tr.id = `tr${i}`
         table.appendChild(tr)
 
         //create td gambar
@@ -96,6 +98,13 @@ function tampilkan() {
         quantity.min = 0
         quantity.value = belanjaanObj[i].jumlah
         divValue.appendChild(quantity)
+
+        //tombol hapus
+        const hapus = document.createElement('button')
+        hapus.id = "hapus"
+        hapus.innerText = "hapus barang"
+        hapus.setAttribute("onclick", `hapus(${i})`)
+        divValue.appendChild(hapus)
         
        //crete td price
        const tdPrice = document.createElement('td');
@@ -124,19 +133,53 @@ function tampilkan() {
 
   tampilkan()
 
-  //tombol kurang tambah
+// var baru buat keranjang
 
 
-// quantity.addEventListener('oninput', nambahNgurang);
+let keranjang = daftarBelanja
 
-//function to close when clicked outside
 function nambahNgurang(id,){
     let quantity = document.getElementById(`id${id}`)
     let price = document.getElementById(`price${id}`)
     let hargaTotal = document.getElementById(`total${id}`)
-    
-    let totalSemua = document.getElementById(`total${id}`)
+
+    keranjang[id].jumlah = quantity.value
 
     hargaTotal.textContent = quantity.value * price.value;
-    totalSemua.textContent = hargaTotal.textContent
+
+    keranjang[id].total = hargaTotal.textContent
+
+    let totalSemua = document.getElementById('totalSemua')
+    let kalkulasiTotal = document.querySelectorAll(".amount")
+
+    let jumlah = 0
+    for(let a = 0; a < keranjang.length; a++){
+        jumlah += +keranjang[a].total
+    }
+
+    totalSemua.innerHTML = jumlah
+
+    //update keranjang
+    console.log(keranjang)    
 }
+
+function hapus(id){
+    document.getElementById(`tr${id}`).remove();
+    keranjang.splice(id , 1)
+    console.log(keranjang)
+}
+
+let checkoutBtn = document.getElementById("checkout")
+
+checkoutBtn.addEventListener('click', checkout)
+
+function checkout(){
+    document.getElementById("popup-1").classList.toggle("active");
+    modal.style.display = 'none'
+}
+
+function togglePopup(){
+    document.getElementById("popup-1").classList.toggle("active");
+  }
+  
+  
