@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>simpleModal</title>
     <link rel="stylesheet" href="style.css">
+    <!-- JavaScript Bundle with Popper -->
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
     <script src="https://kit.fontawesome.com/9fe9ae1a18.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -18,16 +20,67 @@
                 <span class="closeBtn">&times;</span>
                 <h2>Keranjang belanja</h2>
             </div>
-            <div class="modal-body">
-                <p>steam 1</p>
-                <p>steam 2</p>
+            <div id="modal-body" class="modal-body">
+                <div id="main">
+                    <table id="table-checkout" class="table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th class="text-right"><span id="amount">amount</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="listBelanjaan">
+                        <!-- <tr>
+                            <td>
+                                <div class="product-img">
+                                    <div class="img-product">
+                                        <img src="steam wallet 5 dollar-800x800.jpg">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p id="namaBarang">product 1</p>
+                            </td>
+                            <td>
+                                <div class="button-container">
+                                    <button id="plus" class="cart-qty-plus" type="button" value="+">+</button>
+                                    <input id="quantity" type="number" name="qty" min="0" class="qty-form-control" value="0"/>
+                                    <button id="minus" class="cart-qty-minus" type="button" value="-">-</button>
+                                </div>
+                            </td>
+                            <td>
+                                <input id="price" type="number" value="1" class="price-form-control" disabled>
+                            </td>
+                            <td align="right"> $ <span id="hargaTotal" class="amount">0</span>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td align="right">
+                                <strong>TOTAL = $ <span id="total" class="total">0</span></strong>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+                </div>
             </div>
             <div class="modal-footer">
                 <button id="checkout" class="button">beli sekarang</button>
             </div>
         </div>
     </div>
-
     <script src="main.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
