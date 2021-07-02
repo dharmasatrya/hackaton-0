@@ -9,7 +9,7 @@ body {
 
 .steamWallet {
     width: 200px;
-    height: 1260px;
+    height: 1130px;
     background-color: #444444;
     margin: auto;
     padding: 10px;
@@ -20,8 +20,10 @@ body {
 .gallery li {
     overflow: hidden;
     float:center;
-    width: 200px;
+    width: 120px;
     height: 200px;
+    margin-bottom: 20px;
+
 }
 
 /* .clear {
