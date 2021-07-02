@@ -1,0 +1,27 @@
+.bg-navbar-custom {
+  background-color: #2a3547;
+}
+
+
+/**
+ * Jika .modalcustom-overlay ada, berarti .mocal-custom-hide-it harus dihapus
+ * agar bisa tampil modal nya
+ */
+.modal-custom-overlay {
+  background-color: rgba(0,0,0,0.4); /* Transparent dimmed overlay */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.modal-custom-hide-it {
+  display: none;
+}
+
+.mh1 {
+  margin-top: 50;
+}
+
