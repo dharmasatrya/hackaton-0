@@ -13,7 +13,7 @@ body{
 
 .steamWallet {
   width: 200px;
-  height: 1220px;
+  height: 1350px;
   background-color: #444444;
   margin: auto;
   padding: 10px;
@@ -23,8 +23,7 @@ body{
 
 .gallery li {
   overflow: hidden;
-  float:center;
-  width: 120px;
+  float: left;
   /* height: 200px; */
   margin-bottom: 20px;
 

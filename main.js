@@ -36,22 +36,13 @@ function clickOutside(e){
 // utk masukin ke kerangjang
 let checkout = []
 function tambahKeKeranjang(event) {
-    // console.log(event.target.getAttribute('index-product'));
+    // console.log(event.target.getAttribute(git 'index-product'));
     let index = Number(event.target.getAttribute('index-product'))
     // checkout.push(products[index])
-    console.log(products[index]);
-    console.log(checkout);
-    let obj = {namaBarang : products[index].namaBarang, harga: products[index].harga}
-    let count = 0
-    if (obj['quantity'] === undefined) {
-        obj['quantity'] = 0
-    }
-    obj['quantity'] = count
-    if (obj === products[index]) {
-        count++
-    }
-
+    // console.log(products[index]);
+    let obj = {namaBarang : products[index].namaBarang, harga: products[index].harga, quantity: 1} 
     checkout.push(obj)
+    console.log(checkout);
 }
 
 function panggil(data) {
